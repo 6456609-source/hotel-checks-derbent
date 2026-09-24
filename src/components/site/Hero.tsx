@@ -79,7 +79,7 @@ const Hero = ({ onBook }: HeroProps) => {
         <div className="hero-giant" aria-hidden="true">
           Чеки
         </div>
-        <p className="hero-lead">Все отчётные документы. Оплата по&nbsp;безналу.</p>
+        <p className="hero-lead">Все отчётные документы. Оплата по&nbsp;безналу и&nbsp;наличный расчёт.</p>
         <ul className="hero-docs">
           <li>Счёт</li>
           <li>Кассовый чек</li>

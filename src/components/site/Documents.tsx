@@ -11,7 +11,7 @@ const DOCS = [
 const STEPS = [
   { n: "01", title: "Заявка", text: "Оставляете заявку с датами и реквизитами компании." },
   { n: "02", title: "Счёт", text: "Присылаем счёт и договор в течение часа." },
-  { n: "03", title: "Оплата", text: "Компания платит по безналу, или вы — картой на месте." },
+  { n: "03", title: "Оплата", text: "Компания платит по безналу, или вы — наличными либо картой на месте." },
   { n: "04", title: "Документы", text: "При выезде получаете полный комплект для отчёта." },
 ];
 
@@ -20,8 +20,8 @@ const Documents = () => {
     <section id="documents" className="px-4 md:px-6 py-20 md:py-28 scroll-mt-4">
       <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-end mb-14 reveal">
         <h2 className="section-title">
-          Документы для бухгалтерии
-          <span className="text-primary"> и&nbsp;безнал</span>
+          Документы для бухгалтерии,
+          <span className="text-primary"> безнал и&nbsp;наличный расчёт</span>
         </h2>
         <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
           Документы выдаём только за фактическое проживание — с реальными датами заезда и выезда. Всё чисто:
