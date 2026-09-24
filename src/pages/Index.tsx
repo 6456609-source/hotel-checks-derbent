@@ -21,7 +21,30 @@ const Index = () => {
   useReveal(city?.slug);
 
   useEffect(() => {
-    if (city) document.title = `Выгодная командировка в ${city.to} — гостиница с отчётными документами`;
+    if (!city) return;
+    const title = `Оформление документов за проживание в ${city.in} — гостиничные чеки для отчёта`;
+    const description = `Оформление документов за проживание в гостинице в ${city.in} для командировки: кассовый чек, счёт, акт, договор. Гостиничные чеки для бухгалтерии и авансового отчёта, оплата наличными и по безналу.`;
+    const keywords = [
+      `документы за проживание ${city.name}`,
+      `гостиничные чеки ${city.name}`,
+      "оформление документов за проживание",
+      `чеки за гостиницу ${city.name}`,
+      "отчётные документы для командировки",
+      "документы для авансового отчёта",
+      "чек за проживание в гостинице",
+      `командировка ${city.name}`,
+      `гостиница с документами ${city.name}`,
+      "закрывающие документы гостиница",
+      "документы за проживание Дагестан",
+    ].join(", ");
+    const setMeta = (attr: string, key: string, value: string) => {
+      document.querySelector(`meta[${attr}="${key}"]`)?.setAttribute("content", value);
+    };
+    document.title = title;
+    setMeta("name", "description", description);
+    setMeta("name", "keywords", keywords);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", description);
   }, [city]);
 
   if (!city) return <Navigate to="/" replace />;
