@@ -2,6 +2,7 @@ import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import {componentTagger} from "pp-tagger";
+import {seoPages} from "./seo-pages";
 
 // DDoS Guard требует двусторонний app-level keepalive чаще 30s.
 // Сервер: text-frame {type:'ping'} каждые 5-9s (рандом — чтобы DDoS Guard
@@ -27,6 +28,7 @@ export default defineConfig(({mode}) => ({
     plugins: [
         react(),
         hmrKeepalive,
+        seoPages(),
         mode === 'development' &&
         componentTagger(),
     ].filter(Boolean),
