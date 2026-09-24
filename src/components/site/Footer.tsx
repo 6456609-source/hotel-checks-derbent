@@ -20,7 +20,7 @@ const Footer = ({ onBook }: Props) => {
                 onClick={onBook}
                 className="h-[52px] px-7 rounded-full bg-background text-foreground font-medium inline-flex items-center gap-3 hover:translate-x-1 transition-transform"
               >
-                Забронировать номер <Icon name="ArrowRight" size={18} />
+                Оставить заявку <Icon name="ArrowRight" size={18} />
               </button>
               <a
                 href={PHONE_HREF}

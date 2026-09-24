@@ -54,7 +54,7 @@ const BookingDialog = ({ open, onOpenChange }: Props) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="bg-background border-border max-w-lg max-h-[92vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="font-heading text-2xl">Забронировать номер</DialogTitle>
+          <DialogTitle className="font-heading text-2xl">Оставить заявку</DialogTitle>
           <DialogDescription>Документы — только за фактическое проживание с реальными датами.</DialogDescription>
         </DialogHeader>
         <form onSubmit={submit} className="grid gap-4 mt-2" noValidate>

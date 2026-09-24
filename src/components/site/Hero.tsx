@@ -66,7 +66,7 @@ const Hero = ({ onBook }: HeroProps) => {
                   }}
                   className="mt-4 h-[52px] rounded-full bg-primary text-primary-foreground font-medium"
                 >
-                  Забронировать номер
+                  Оставить заявку
                 </button>
               </div>
             </SheetContent>
@@ -87,7 +87,7 @@ const Hero = ({ onBook }: HeroProps) => {
           <li>Договор</li>
         </ul>
         <button type="button" className="hero-book" onClick={onBook}>
-          Забронировать номер
+          Оставить заявку
           <Icon name="ArrowRight" size={18} />
         </button>
         <div className="hero-chips" aria-hidden="true">
