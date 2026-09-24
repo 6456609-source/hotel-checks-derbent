@@ -1,16 +1,26 @@
+import { useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import type { City } from "./cities";
 
-const FAQ = [
+const getFaq = (city: City) => [
   {
-    q: "Какие документы я получу для отчёта?",
-    a: "Счёт на оплату, кассовый чек, акт и договор с организацией. Все документы — с печатью и подписью, по фактическим датам проживания.",
+    q: `Где взять чек за гостиницу в ${city.in}?`,
+    a: `У нас. При проживании в ${city.in} выдаём кассовый чек, счёт, акт и договор — полный комплект для отчёта о командировке. Документы с печатью и подписью, по фактическим датам проживания.`,
+  },
+  {
+    q: "Какие документы нужны для авансового отчёта за проживание?",
+    a: "Для авансового отчёта бухгалтерии обычно нужен кассовый чек и документ об оказании услуг — счёт или акт. Мы выдаём их вместе, плюс договор, если его требует ваша компания.",
+  },
+  {
+    q: `Сколько времени занимает оформление документов за проживание в ${city.in}?`,
+    a: "Счёт и договор присылаем в течение 15 минут после заявки. Кассовый чек и акт вы получаете сразу при выезде — ждать не нужно.",
   },
   {
     q: "Можно ли получить документы на другие даты?",
     a: "Нет. Мы выдаём документы только за фактическое проживание с реальными датами заезда и выезда. Это защищает и вас, и вашу компанию при проверке.",
   },
   {
-    q: "Как оплатить от компании по безналу?",
+    q: "Как оплатить проживание от компании по безналу?",
     a: "Пришлите реквизиты организации и даты — мы выставим счёт и договор. После оплаты бронь подтверждается, а закрывающие документы вы получаете при выезде.",
   },
   {
@@ -18,7 +28,7 @@ const FAQ = [
     a: "Да. Оплачиваете картой или наличными на месте, получаете кассовый чек и все документы для авансового отчёта.",
   },
   {
-    q: "Трансфер и аренда авто тоже с документами?",
+    q: "Выдаёте ли вы гостиничные чеки за трансфер и аренду авто?",
     a: "Да, по дополнительным услугам — трансферу, аренде авто и переговорной — выдаём отдельные чеки и акты.",
   },
   {
@@ -27,7 +37,28 @@ const FAQ = [
   },
 ];
 
-const Faq = () => {
+const Faq = ({ city }: { city: City }) => {
+  const faq = getFaq(city);
+
+  useEffect(() => {
+    const id = "faq-schema";
+    document.getElementById(id)?.remove();
+    const script = document.createElement("script");
+    script.id = id;
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => script.remove();
+  }, [city.slug]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <section id="faq" className="px-4 md:px-6 py-20 md:py-28 scroll-mt-4">
       <div className="grid lg:grid-cols-[468px_1fr] gap-10 lg:gap-8">
@@ -38,7 +69,7 @@ const Faq = () => {
           </p>
         </div>
         <Accordion type="single" collapsible defaultValue="item-0" className="reveal">
-          {FAQ.map((f, i) => (
+          {faq.map((f, i) => (
             <AccordionItem key={f.q} value={`item-${i}`} className="border-b-2 border-foreground/15">
               <AccordionTrigger className="text-left text-lg md:text-xl font-bold py-6 hover:no-underline hover:text-primary [&[data-state=open]]:text-primary">
                 {f.q}

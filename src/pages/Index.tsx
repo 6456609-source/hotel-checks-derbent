@@ -58,7 +58,7 @@ const Index = () => {
       <Services onBook={openBook} />
       <Reviews />
       <Contacts city={city} />
-      <Faq />
+      <Faq city={city} />
       <SeoText city={city} />
       <CityLinks city={city} />
       <Footer onBook={openBook} city={city} />
