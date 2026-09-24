@@ -11,7 +11,7 @@ const getRoutes = (city: City) => [
 const BASE_CONTACTS: { icon: string; label: string; value: string; href?: string }[] = [
   { icon: "Phone", label: "Телефон", value: PHONE, href: PHONE_HREF },
   { icon: "MessageCircle", label: "WhatsApp / Telegram", value: PHONE, href: PHONE_HREF },
-  { icon: "Mail", label: "Почта для счетов", value: "booking@derbent-hotel.ru", href: "mailto:booking@derbent-hotel.ru" },
+  { icon: "Mail", label: "Почта для счетов", value: "6456609@gmail.com", href: "mailto:6456609@gmail.com" },
 ];
 
 const Contacts = ({ city }: { city: City }) => {
