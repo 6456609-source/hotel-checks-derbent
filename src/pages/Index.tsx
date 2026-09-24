@@ -8,6 +8,7 @@ import Contacts from "@/components/site/Contacts";
 import Faq from "@/components/site/Faq";
 import Footer from "@/components/site/Footer";
 import CityLinks from "@/components/site/CityLinks";
+import SeoText from "@/components/site/SeoText";
 import BookingDialog from "@/components/site/BookingDialog";
 import FloatingContacts from "@/components/site/FloatingContacts";
 import { DEFAULT_CITY, findCity } from "@/components/site/cities";
@@ -58,6 +59,7 @@ const Index = () => {
       <Reviews />
       <Contacts city={city} />
       <Faq />
+      <SeoText city={city} />
       <CityLinks city={city} />
       <Footer onBook={openBook} city={city} />
       <BookingDialog open={bookOpen} onOpenChange={setBookOpen} />
