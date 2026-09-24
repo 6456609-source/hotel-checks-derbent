@@ -1,20 +1,22 @@
 import Icon from "@/components/ui/icon";
 import { PHONE, PHONE_HREF } from "./data";
+import type { City } from "./cities";
 
-const ROUTES = [
-  { icon: "Plane", title: "Из аэропорта Махачкалы", text: "≈ 2 часа на машине. Закажите трансфер — встретим у выхода." },
-  { icon: "TrainFront", title: "С вокзала Дербента", text: "≈ 10 минут на такси или нашем трансфере." },
+const getRoutes = (city: City) => [
+  { icon: "Plane", title: "Из аэропорта Махачкалы", text: `${city.airport} на машине. Закажите трансфер — встретим у выхода.` },
+  { icon: "TrainFront", title: "С вокзала или автостанции", text: "Встретим и довезём на такси или нашем трансфере." },
   { icon: "Car", title: "На своей машине", text: "Бесплатная парковка во дворе гостиницы." },
 ];
 
-const CONTACTS = [
+const BASE_CONTACTS: { icon: string; label: string; value: string; href?: string }[] = [
   { icon: "Phone", label: "Телефон", value: PHONE, href: PHONE_HREF },
   { icon: "MessageCircle", label: "WhatsApp / Telegram", value: PHONE, href: PHONE_HREF },
   { icon: "Mail", label: "Почта для счетов", value: "booking@derbent-hotel.ru", href: "mailto:booking@derbent-hotel.ru" },
-  { icon: "MapPin", label: "Адрес", value: "Республика Дагестан, г. Дербент" },
 ];
 
-const Contacts = () => {
+const Contacts = ({ city }: { city: City }) => {
+  const ROUTES = getRoutes(city);
+  const CONTACTS = [...BASE_CONTACTS, { icon: "MapPin", label: "Адрес", value: `Республика Дагестан, г. ${city.name}` }];
   return (
     <section id="contacts" className="px-4 md:px-6 py-20 md:py-28 bg-card scroll-mt-4">
       <h2 className="section-title mb-14 reveal">Как добраться и&nbsp;контакты</h2>
@@ -58,8 +60,8 @@ const Contacts = () => {
         </div>
         <div className="reveal rounded-lg overflow-hidden min-h-[420px] bg-muted">
           <iframe
-            title="Карта: Дербент"
-            src="https://yandex.ru/map-widget/v1/?ll=48.289%2C42.057&z=14"
+            title={`Карта: ${city.name}`}
+            src={`https://yandex.ru/map-widget/v1/?ll=${city.ll}&z=13`}
             className="w-full h-full min-h-[420px] border-0 grayscale-[30%]"
             loading="lazy"
           />

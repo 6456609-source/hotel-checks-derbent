@@ -1,18 +1,20 @@
 import Icon from "@/components/ui/icon";
+import type { City } from "./cities";
 import { HOTEL_NAME, LOGO_URL, NAV, PHONE, PHONE_HREF, scrollToId } from "./data";
 
 interface Props {
   onBook: () => void;
+  city: City;
 }
 
-const Footer = ({ onBook }: Props) => {
+const Footer = ({ onBook, city }: Props) => {
   return (
     <footer className="px-4 md:px-6 pt-4">
       <div className="rounded-t-lg bg-primary text-primary-foreground p-6 md:p-10 overflow-hidden relative">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 relative z-10">
           <div>
             <p className="uppercase font-bold text-3xl md:text-5xl leading-[0.92] tracking-tight max-w-2xl">
-              Командировка в&nbsp;Дербент — без проблем с&nbsp;отчётом
+              Командировка в&nbsp;{city.to} — без проблем с&nbsp;отчётом
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <button
@@ -45,7 +47,7 @@ const Footer = ({ onBook }: Props) => {
             </span>
             <span className="max-w-[260px]">{HOTEL_NAME}</span>
           </div>
-          <span>© {new Date().getFullYear()} Дербент, Республика Дагестан</span>
+          <span>© {new Date().getFullYear()} {city.name}, Республика Дагестан</span>
         </div>
       </div>
     </footer>

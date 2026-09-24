@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useReveal() {
+export function useReveal(key?: string) {
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
     const io = new IntersectionObserver(
@@ -16,5 +16,5 @@ export function useReveal() {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [key]);
 }

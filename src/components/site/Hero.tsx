@@ -1,15 +1,17 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { HERO_PHOTO, HOTEL_NAME, LOGO_URL, NAV, scrollToId } from "./data";
+import { HOTEL_NAME, LOGO_URL, NAV, scrollToId } from "./data";
+import type { City } from "./cities";
 
 interface HeroProps {
   onBook: () => void;
+  city: City;
 }
 
 const HERO_PILLS = NAV.filter((n) => ["documents", "reviews", "contacts"].includes(n.id));
 
-const Hero = ({ onBook }: HeroProps) => {
+const Hero = ({ onBook, city }: HeroProps) => {
   const [open, setOpen] = useState(false);
 
   const go = (id: string) => {
@@ -20,7 +22,7 @@ const Hero = ({ onBook }: HeroProps) => {
   return (
     <main className="hero-stage" id="top">
       <figure className="hero-photo">
-        <img src={HERO_PHOTO} alt="Стены крепости Нарын-Кала в Дербенте" />
+        <img src={city.photo} alt={city.photoAlt} />
       </figure>
 
       <section className="hero-text">
@@ -72,7 +74,7 @@ const Hero = ({ onBook }: HeroProps) => {
             </SheetContent>
           </Sheet>
         </header>
-        <h1 className="hero-h1">Выгодная командировка в&nbsp;Дербент</h1>
+        <h1 className="hero-h1">Выгодная командировка в&nbsp;{city.to}</h1>
       </section>
 
       <section className="hero-cta" aria-label="Бронирование">
