@@ -12,8 +12,8 @@ export const MEETING_PHOTO =
 
 export const HOTEL_NAME = "Выгодная командировка с отчетными документами";
 
-export const PHONE = "+7 (900) 000-00-00";
-export const PHONE_HREF = "tel:+79000000000";
+export const PHONE = "+7 (996) 532-32-43";
+export const PHONE_HREF = "tel:+79965323243";
 
 export const NAV = [
   { id: "documents", label: "Документы" },
