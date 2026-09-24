@@ -4,89 +4,79 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Hero tokens (из выбранного экрана) */
+    --hero-size-head: 61px;
+    --hero-size-body: 17px;
+    --hero-x-photo-canvas: 23 45% 11%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: 21 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 21 100% 50%;
+    --accent-foreground: 0 0% 0%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 24%;
+    --ring: 21 100% 50%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 21 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 21 100% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 21 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 21 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 24%;
+    --ring: 21 100% 50%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 21 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 21 100% 50%;
   }
 }
 
@@ -95,7 +85,279 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: var(--hero-size-body);
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* ---------- HERO (перенос 1-в-1 из выбранного варианта) ---------- */
+  .hero-stage {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    max-height: 960px;
+    padding: 24px 24px 0 24px;
+    display: grid;
+    grid-template-columns: 468px 1fr;
+    column-gap: 32px;
+    grid-template-areas: "photo text" "photo cta";
+    grid-template-rows: auto 1fr;
+  }
+  .hero-photo {
+    grid-area: photo;
+    margin-bottom: 24px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: hsl(var(--hero-x-photo-canvas));
+    animation: hero-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .hero-text {
+    grid-area: text;
+    min-width: 0;
+  }
+  .hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 44px;
+  }
+  .hero-logo {
+    background: hsl(var(--foreground));
+    border-radius: var(--radius);
+    padding: 3px;
+    flex-shrink: 0;
+  }
+  .hero-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+  .pill {
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 0.01em;
+    height: 42px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 999px;
+    color: hsl(var(--foreground));
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+    white-space: nowrap;
+  }
+  .pill:hover,
+  .pill.is-on {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+  .hero-h1 {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 800;
+    font-size: var(--hero-size-head);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    margin: 30px 0;
+    animation: hero-rise 0.8s 0.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-cta {
+    grid-area: cta;
+    position: relative;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    padding: 10px 64px 0 14px;
+    animation: hero-slide 0.9s 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .hero-giant {
+    font-weight: 700;
+    font-size: calc(var(--hero-size-head) * 5.1);
+    line-height: 0.8;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    margin-left: -6px;
+    user-select: none;
+  }
+  .hero-docs {
+    position: absolute;
+    left: 380px;
+    bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+  .hero-lead {
+    position: absolute;
+    left: 18px;
+    bottom: 100px;
+    width: 330px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.75em;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+  }
+  .hero-book {
+    position: absolute;
+    left: 18px;
+    bottom: 26px;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 0.02em;
+    transition: transform 0.2s;
+  }
+  .hero-book:hover {
+    transform: translateX(4px);
+  }
+  .hero-chips {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hero-chip {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    display: grid;
+    place-items: center;
+  }
+
+  @media (max-width: 1180px) {
+    :root {
+      --hero-size-head: 48px;
+    }
+    .hero-stage {
+      grid-template-columns: 340px 1fr;
+    }
+    .hero-docs {
+      left: auto;
+      right: 56px;
+      text-align: right;
+    }
+  }
+  @media (max-width: 900px) {
+    :root {
+      --hero-size-head: 40px;
+    }
+    .hero-stage {
+      height: auto;
+      min-height: 0;
+      padding: 16px 16px 0;
+      grid-template-columns: 1fr;
+      grid-template-areas: "text" "photo" "cta";
+      grid-template-rows: auto auto auto;
+    }
+    .hero-photo {
+      height: 42vh;
+      margin-bottom: 16px;
+    }
+    .hero-pills {
+      display: none;
+    }
+    .hero-h1 {
+      margin: 24px 0;
+    }
+    .hero-cta {
+      min-height: 470px;
+    }
+    .hero-giant {
+      font-size: 38vw;
+    }
+    .hero-lead {
+      width: auto;
+      right: 18px;
+      bottom: 196px;
+      font-size: 1.35em;
+    }
+    .hero-docs {
+      font-size: 1.35em;
+      bottom: 100px;
+    }
+  }
+  @media (max-width: 480px) {
+    :root {
+      --hero-size-head: 30px;
+    }
+  }
+
+  /* ---------- Общие элементы секций ---------- */
+  .section-title {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    font-size: clamp(30px, 5vw, 61px);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-slide {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
