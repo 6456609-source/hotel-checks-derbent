@@ -188,7 +188,7 @@
   }
   .hero-giant {
     font-weight: 700;
-    font-size: calc(var(--hero-size-head) * 5.1);
+    font-size: calc(var(--hero-size-head) * 2.55);
     line-height: 0.8;
     letter-spacing: -0.035em;
     text-transform: uppercase;
@@ -294,7 +294,7 @@
       min-height: 470px;
     }
     .hero-giant {
-      font-size: 38vw;
+      font-size: 19vw;
     }
     .hero-lead {
       width: auto;
