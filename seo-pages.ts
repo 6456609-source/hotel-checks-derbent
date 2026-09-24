@@ -4,6 +4,8 @@ import type { Plugin, ResolvedConfig } from "vite";
 import { CITIES, DEFAULT_CITY } from "./src/components/site/cities";
 import { getSeo } from "./src/components/site/seo";
 
+export const SITE_URL = "https://kassovie-cheki-original.ru";
+
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
 const setTag = (html: string, re: RegExp, value: string) =>
@@ -33,6 +35,9 @@ export function seoPages(): Plugin {
         html = setTag(html, /(<meta property="og:description" content=")[^"]*(")/, seo.description);
         html = setTag(html, /(<meta property="og:image" content=")[^"]*(")/, seo.image);
         html = setTag(html, /(<meta name="twitter:image" content=")[^"]*(")/, seo.image);
+        const pageUrl = city.slug === DEFAULT_CITY.slug ? `${SITE_URL}/` : `${SITE_URL}/${city.slug}`;
+        html = html.replace(/\s*<link rel="canonical"[^>]*>/, "").replace(/\s*<meta property="og:url"[^>]*>/, "");
+        html = html.replace("</head>", `  <link rel="canonical" href="${pageUrl}">\n    <meta property="og:url" content="${pageUrl}">\n  </head>`);
 
         if (city.slug === DEFAULT_CITY.slug) {
           fs.writeFileSync(indexPath, html);
@@ -42,6 +47,16 @@ export function seoPages(): Plugin {
         fs.writeFileSync(path.join(outDir, city.slug, "index.html"), html);
         fs.writeFileSync(path.join(outDir, `${city.slug}.html`), html);
       }
+
+      const today = new Date().toISOString().slice(0, 10);
+      const ordered = [DEFAULT_CITY, ...CITIES.filter((c) => c.slug !== DEFAULT_CITY.slug)];
+      const urls = ordered.map((city) => {
+        const isMain = city.slug === DEFAULT_CITY.slug;
+        const loc = isMain ? `${SITE_URL}/` : `${SITE_URL}/${city.slug}`;
+        return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${isMain ? "1.0" : "0.8"}</priority>\n  </url>`;
+      });
+      const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
+      fs.writeFileSync(path.join(outDir, "sitemap.xml"), sitemap);
     },
   };
 }
