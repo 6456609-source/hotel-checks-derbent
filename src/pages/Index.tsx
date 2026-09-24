@@ -7,6 +7,7 @@ import Contacts from "@/components/site/Contacts";
 import Faq from "@/components/site/Faq";
 import Footer from "@/components/site/Footer";
 import BookingDialog from "@/components/site/BookingDialog";
+import FloatingContacts from "@/components/site/FloatingContacts";
 import { useReveal } from "@/hooks/use-reveal";
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
       <Faq />
       <Footer onBook={openBook} />
       <BookingDialog open={bookOpen} onOpenChange={setBookOpen} />
+      <FloatingContacts />
     </div>
   );
 };
