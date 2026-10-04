@@ -1,7 +1,7 @@
 import type { City } from "./cities";
 
 export const getSeo = (city: City) => {
-  const title = `Оформление документов за проживание в ${city.in} — гостиничные чеки для отчёта${city.titleExtra ? ` | ${city.titleExtra}` : ""}`;
+  const title = `Оформление документов за проживание в ${city.in} — гостиничные чеки для отчёта | Чеки ${city.name}`;
   const description = `Оформление документов за проживание в ${city.hotel ? `отеле «${city.hotel.replace(/^Отель «|»$/g, "")}»` : "гостинице"} в ${city.in} для командировки: кассовый чек, счёт, акт, договор. Гостиничные чеки для бухгалтерии и авансового отчёта, оплата наличными и по безналу.${city.titleExtra ? ` ${city.titleExtra} — быстро и официально.` : ""}`;
   const keywords = [
     `документы за проживание ${city.name}`,
