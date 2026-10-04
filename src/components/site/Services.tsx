@@ -1,16 +1,17 @@
 import Icon from "@/components/ui/icon";
 import { MEETING_PHOTO } from "./data";
+import type { City } from "./cities";
 
-const SERVICES = [
+const getServices = (city: City) => [
   {
     icon: "Plane",
     title: "Трансфер",
-    text: "Встретим в аэропорту Махачкалы или на вокзале, довезём до гостиницы и обратно. Чек на трансфер — отдельной строкой.",
+    text: `Встретим в аэропорту ${city.region ? "Симферополя" : "Махачкалы"} или на вокзале, довезём до гостиницы и обратно. Чек на трансфер — отдельной строкой.`,
   },
   {
     icon: "Car",
     title: "Аренда авто",
-    text: "Автомобиль на время командировки — для поездок по объектам, по Дагестану. С водителем или без.",
+    text: `Автомобиль на время командировки — для поездок по объектам, по ${city.regionIn ?? "Дагестану"}. С водителем или без.`,
   },
   {
     icon: "Presentation",
@@ -21,9 +22,11 @@ const SERVICES = [
 
 interface Props {
   onBook: () => void;
+  city: City;
 }
 
-const Services = ({ onBook }: Props) => {
+const Services = ({ onBook, city }: Props) => {
+  const SERVICES = getServices(city);
   return (
     <section id="services" className="px-4 md:px-6 py-20 md:py-28 bg-foreground text-background scroll-mt-4">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">

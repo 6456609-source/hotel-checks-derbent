@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import type { City } from "./cities";
+import { DAGESTAN, type City } from "./cities";
 import { HOTEL_NAME, LOGO_URL, NAV, PHONE, PHONE_HREF, scrollToId } from "./data";
 
 interface Props {
@@ -47,7 +47,7 @@ const Footer = ({ onBook, city }: Props) => {
             </span>
             <span className="max-w-[260px]">{HOTEL_NAME}</span>
           </div>
-          <span>© {new Date().getFullYear()} {city.name}, Республика Дагестан</span>
+          <span>© {new Date().getFullYear()} {city.name}, {city.region ?? DAGESTAN}</span>
         </div>
       </div>
     </footer>

@@ -43,7 +43,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground font-body overflow-x-hidden">
       <Hero onBook={openBook} city={city} />
       <Documents />
-      <Services onBook={openBook} />
+      <Services onBook={openBook} city={city} />
       <Reviews />
       <Contacts city={city} />
       <Faq city={city} />
