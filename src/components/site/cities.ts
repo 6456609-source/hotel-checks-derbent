@@ -11,6 +11,7 @@ export interface City {
   photoAlt: string;
   airport: string;
   ll: string;
+  titleExtra?: string;
   region?: string;
   regionIn?: string;
   airportFrom?: string;
@@ -33,6 +34,7 @@ export const CITIES: City[] = [
     photoAlt: "Белая скала Ак-Кая под Белогорском",
     airport: "≈ 40 минут",
     ll: "34.600%2C45.055",
+    titleExtra: "Чеки Белогорск",
     region: "Республика Крым",
     regionIn: "Крыму",
     airportFrom: "Из аэропорта Симферополя",
