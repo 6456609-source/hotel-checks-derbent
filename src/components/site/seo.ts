@@ -2,7 +2,7 @@ import type { City } from "./cities";
 
 export const getSeo = (city: City) => {
   const title = `Оформление документов за проживание в ${city.in} — гостиничные чеки для отчёта | Чеки ${city.name}`;
-  const description = `Оформление документов за проживание в ${city.hotel ? `отеле «${city.hotel.replace(/^Отель «|»$/g, "")}»` : "гостинице"} в ${city.in} для командировки: кассовый чек, счёт, акт, договор. Гостиничные чеки для бухгалтерии и авансового отчёта, оплата наличными и по безналу.${city.titleExtra ? ` ${city.titleExtra} — быстро и официально.` : ""}`;
+  const description = `Оформление документов за проживание в ${city.hotel ? `отеле «${city.hotel.replace(/^Отель «|»$/g, "")}»` : "гостинице"} в ${city.in} для командировки: кассовый чек, счёт, акт, договор. Гостиничные чеки для бухгалтерии и авансового отчёта, оплата наличными и по безналу.${city.titleExtra ? ` ${city.titleExtra} — быстро и официально.` : city.slug === "derbent" ? " Чеки Дербент — быстро и официально." : ""}`;
   const keywords = [
     `документы за проживание ${city.name}`,
     `гостиничные чеки ${city.name}`,
@@ -15,7 +15,7 @@ export const getSeo = (city: City) => {
     `гостиница с документами ${city.name}`,
     `закрывающие документы гостиница ${city.name}`,
     ...(city.keywords ?? ["документы за проживание Дагестан"]),
-    ...(city.slug === "derbent" ? ["гостиничные чеки Махачкала"] : []),
+    ...(city.slug === "derbent" ? ["гостиничные чеки Махачкала", "чеки Дербент"] : []),
   ].join(", ");
   return { title, description, keywords, image: city.photo };
 };
