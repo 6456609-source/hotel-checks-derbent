@@ -15,6 +15,7 @@ export interface City {
   region?: string;
   regionIn?: string;
   airportFrom?: string;
+  airportOf?: string;
   hotel?: string;
   address?: string;
   mapText?: string;
@@ -23,6 +24,7 @@ export interface City {
 }
 
 export const DAGESTAN = "Республика Дагестан";
+export const KRAI = "Краснодарский край";
 
 export const CITIES: City[] = [
   {
@@ -38,6 +40,7 @@ export const CITIES: City[] = [
     region: "Республика Крым",
     regionIn: "Крыму",
     airportFrom: "Из аэропорта Симферополя",
+    airportOf: "Симферополя",
     hotel: "Отель «Ак-Каз»",
     address: "Республика Крым, г. Белогорск, ул. Шевченко, 40",
     mapText: "Белогорск, улица Шевченко, 40",
@@ -62,7 +65,10 @@ export const CITIES: City[] = [
   { slug: "kaspiysk", name: "Каспийск", in: "Каспийске", to: "Каспийск", photo: `${CDN}db970b0b-0bce-4068-88d2-bf3471759eeb.jpg`, photoAlt: "Набережная Каспийска", airport: "≈ 15 минут", ll: "47.638%2C42.881" },
   { slug: "kizilyurt", name: "Кизилюрт", in: "Кизилюрте", to: "Кизилюрт", photo: `${CDN}d141fe2b-8a4f-48d2-9777-176953b9a889.jpg`, photoAlt: "Река Сулак у Кизилюрта", airport: "≈ 1 час", ll: "47.119%2C43.203" },
   { slug: "kizlyar", name: "Кизляр", in: "Кизляре", to: "Кизляр", photo: `${CDN}8f96ea04-b5cf-486a-a579-0ed96f30c1ec.jpg`, photoAlt: "Улицы Кизляра", airport: "≈ 2,5 часа", ll: "46.713%2C43.847" },
+  { slug: "krasnodar", name: "Краснодар", in: "Краснодаре", to: "Краснодар", photo: `${CDN}e9502a92-85a4-45ba-8a48-e3ab88f880d0.jpg`, photoAlt: "Улица Красная в Краснодаре", airport: "≈ 30 минут", ll: "38.975%2C45.035", airportFrom: "Из аэропорта Краснодара", airportOf: "Краснодара", address: "Краснодарский край, г. Краснодар", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   { slug: "makhachkala", name: "Махачкала", in: "Махачкале", to: "Махачкалу", photo: `${CDN}2ec76909-8b7e-4e06-b636-03b57bce206a.jpg`, photoAlt: "Центр Махачкалы", airport: "≈ 20 минут", ll: "47.505%2C42.983" },
+  { slug: "novorossiysk", name: "Новороссийск", in: "Новороссийске", to: "Новороссийск", photo: `${CDN}961dbca9-135f-492e-966b-c6d981afee86.jpg`, photoAlt: "Набережная Новороссийска", airport: "≈ 1 час", ll: "37.768%2C44.723", airportFrom: "Из аэропорта Анапы", airportOf: "Анапы", address: "Краснодарский край, г. Новороссийск", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
+  { slug: "sochi", name: "Сочи", in: "Сочи", to: "Сочи", photo: `${CDN}d8da35b7-9f44-4c93-9330-354407a035e5.jpg`, photoAlt: "Морской вокзал Сочи", airport: "≈ 40 минут", ll: "39.723%2C43.585", airportFrom: "Из аэропорта Сочи", airportOf: "Сочи", address: "Краснодарский край, г. Сочи", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   { slug: "khasavyurt", name: "Хасавюрт", in: "Хасавюрте", to: "Хасавюрт", photo: `${CDN}09f79e30-a2a7-4781-90b7-188056e2b836.jpg`, photoAlt: "Центр Хасавюрта", airport: "≈ 1,5 часа", ll: "46.588%2C43.250" },
   { slug: "yuzhno-sukhokumsk", name: "Южно-Сухокумск", in: "Южно-Сухокумске", to: "Южно-Сухокумск", photo: `${CDN}00c04c66-6620-40d2-aac3-10df2bc9d688.jpg`, photoAlt: "Южно-Сухокумск", airport: "≈ 4,5 часа", ll: "45.648%2C44.660" },
 ];
