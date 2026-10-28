@@ -60,7 +60,7 @@ const Index = () => {
         addressLocality: city.name,
         addressRegion: city.region ?? DAGESTAN,
         addressCountry: "RU",
-        ...(city.address ? { streetAddress: city.address } : {}),
+        ...(city.mapText && city.address ? { streetAddress: city.address } : {}),
       },
     });
     document.head.appendChild(script);

@@ -16,7 +16,9 @@ const BASE_CONTACTS: { icon: string; label: string; value: string; href?: string
 
 const Contacts = ({ city }: { city: City }) => {
   const ROUTES = getRoutes(city);
-  const CONTACTS = [...BASE_CONTACTS, ...(city.hotel ? [{ icon: "Hotel", label: "Гостиница", value: city.hotel }] : []), { icon: "MapPin", label: "Адрес", value: city.address ?? `${DAGESTAN}, г. ${city.name}` }];
+  const CONTACTS = [...BASE_CONTACTS, ...(city.hotel ? [{ icon: "Hotel", label: "Гостиница", value: city.hotel }] : []), city.mapText
+      ? { icon: "MapPin", label: "Адрес", value: city.address ?? "" }
+      : { icon: "MapPin", label: `${city.region ?? DAGESTAN}, г. ${city.name}`, value: "Работаем по всему городу — встретимся в центре или привезём документы к вам" }];
   return (
     <section id="contacts" className="px-4 md:px-6 py-20 md:py-28 bg-card scroll-mt-4">
       <h2 className="section-title mb-14 reveal">Как добраться и&nbsp;контакты</h2>
