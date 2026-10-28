@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import type { City } from "./cities";
 
-const getFaq = (city: City) => [
+export const getFaq = (city: City) => [
   {
     q: `Где взять чек за гостиницу в ${city.in}?`,
     a: `У нас. При проживании в ${city.in} выдаём кассовый чек, счёт, акт и договор — полный комплект для отчёта о командировке. Документы с печатью и подписью, по фактическим датам проживания.`,
@@ -40,24 +39,6 @@ const getFaq = (city: City) => [
 const Faq = ({ city }: { city: City }) => {
   const faq = getFaq(city);
 
-  useEffect(() => {
-    const id = "faq-schema";
-    document.getElementById(id)?.remove();
-    const script = document.createElement("script");
-    script.id = id;
-    script.type = "application/ld+json";
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faq.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    });
-    document.head.appendChild(script);
-    return () => script.remove();
-  }, [city.slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section id="faq" className="px-4 md:px-6 py-20 md:py-28 scroll-mt-4">

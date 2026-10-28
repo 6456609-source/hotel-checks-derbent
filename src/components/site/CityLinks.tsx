@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { CITIES, cityPath, type City } from "./cities";
 
 const CityLinks = ({ city }: { city: City }) => {
