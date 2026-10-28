@@ -5,7 +5,9 @@ import { DAGESTAN, type City } from "./cities";
 const getRoutes = (city: City) => [
   { icon: "Plane", title: city.airportFrom ?? "Из аэропорта Махачкалы", text: `${city.airport} на машине. Закажите трансфер — встретим у выхода.` },
   { icon: "TrainFront", title: "С вокзала или автостанции", text: "Встретим и довезём на такси или нашем трансфере." },
-  { icon: "Car", title: "На своей машине", text: "Бесплатная парковка во дворе гостиницы." },
+  city.mapText
+    ? { icon: "Car", title: "На своей машине", text: "Бесплатная парковка во дворе гостиницы." }
+    : { icon: "Car", title: "Встреча в городе", text: "Подъедем к вам или встретимся в удобном месте." },
 ];
 
 const BASE_CONTACTS: { icon: string; label: string; value: string; href?: string }[] = [
