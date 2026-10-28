@@ -39,6 +39,7 @@ export const REGION_GEN: Record<string, string> = {
 
 export const CITIES: City[] = [
   { slug: "anapa", name: "Анапа", in: "Анапе", to: "Анапу", photo: `${CDN}8f31394b-c86d-40ab-a86f-efba965cbe04.jpg`, photoAlt: "Пляж и набережная Анапы", airport: "≈ 15 минут", ll: "37.317%2C44.894", airportFrom: "Из аэропорта Анапы", airportOf: "Анапы", address: "Краснодарский край, г. Анапа", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
+  { slug: "armavir", name: "Армавир", in: "Армавире", to: "Армавир", photo: `${CDN}f2c36ccd-0df0-458b-b938-e11425dbb81d.jpg`, photoAlt: "Центральная улица Армавира", airport: "≈ 2 часа", ll: "41.123%2C44.999", airportFrom: "Из аэропорта Ставрополя", airportOf: "Ставрополя", address: "Краснодарский край, г. Армавир", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   {
     slug: "belogorsk",
     name: "Белогорск",
@@ -71,9 +72,11 @@ export const CITIES: City[] = [
     ],
   },
   { slug: "buynaksk", name: "Буйнакск", in: "Буйнакске", to: "Буйнакск", photo: `${CDN}642f8adb-265d-4d29-a2d9-bab10f7b7d1b.jpg`, photoAlt: "Вид на Буйнакск и горы", airport: "≈ 1 час", ll: "47.117%2C42.819" },
+  { slug: "volgodonsk", name: "Волгодонск", in: "Волгодонске", to: "Волгодонск", photo: `${CDN}9db8d265-251c-4183-b57f-00f8ea81241b.jpg`, photoAlt: "Набережная Волгодонска", airport: "≈ 3 часа", ll: "42.152%2C47.513", airportFrom: "Из аэропорта Ростова-на-Дону", airportOf: "Ростова-на-Дону", address: "Ростовская область, г. Волгодонск", region: ROSTOV, regionIn: "Ростовской области", keywords: ["документы за проживание Ростовская область"] },
   { slug: "gelendzhik", name: "Геленджик", in: "Геленджике", to: "Геленджик", photo: `${CDN}1e75a267-9c36-4917-ac50-820fdc7f05e2.jpg`, photoAlt: "Набережная Геленджика", airport: "≈ 15 минут", ll: "38.077%2C44.562", airportFrom: "Из аэропорта Геленджика", airportOf: "Геленджика", address: "Краснодарский край, г. Геленджик", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   { slug: "dagestanskie-ogni", name: "Дагестанские Огни", in: "Дагестанских Огнях", to: "Дагестанские Огни", photo: `${CDN}9ec5c184-0758-4096-8977-1eb6c1475eda.jpg`, photoAlt: "Дагестанские Огни у Каспийского моря", airport: "≈ 2 часа", ll: "48.194%2C42.115" },
   { slug: "derbent", name: "Дербент", in: "Дербенте", to: "Дербент", photo: HERO_PHOTO, photoAlt: "Стены крепости Нарын-Кала в Дербенте", airport: "≈ 2 часа", ll: "48.289%2C42.057" },
+  { slug: "essentuki", name: "Ессентуки", in: "Ессентуках", to: "Ессентуки", photo: `${CDN}c65b9cdf-e324-4183-967b-41669e77ab1c.jpg`, photoAlt: "Курортный парк Ессентуков", airport: "≈ 30 минут", ll: "42.857%2C44.044", airportFrom: "Из аэропорта Минеральных Вод", airportOf: "Минеральных Вод", address: "Ставропольский край, г. Ессентуки", region: STAV, regionIn: "Ставропольскому краю", keywords: ["документы за проживание Ставропольский край"] },
   { slug: "izberbash", name: "Избербаш", in: "Избербаше", to: "Избербаш", photo: `${CDN}98c0932a-50e1-4d8a-84da-9382786d6170.jpg`, photoAlt: "Набережная Избербаша", airport: "≈ 1 час", ll: "47.871%2C42.566" },
   { slug: "kaspiysk", name: "Каспийск", in: "Каспийске", to: "Каспийск", photo: `${CDN}db970b0b-0bce-4068-88d2-bf3471759eeb.jpg`, photoAlt: "Набережная Каспийска", airport: "≈ 15 минут", ll: "47.638%2C42.881" },
   { slug: "kislovodsk", name: "Кисловодск", in: "Кисловодске", to: "Кисловодск", photo: `${CDN}bbf06d0f-e758-452e-95d0-0f27aa4d18c2.jpg`, photoAlt: "Курортный бульвар Кисловодска", airport: "≈ 1 час", ll: "42.716%2C43.905", airportFrom: "Из аэропорта Минеральных Вод", airportOf: "Минеральных Вод", address: "Ставропольский край, г. Кисловодск", region: STAV, regionIn: "Ставропольскому краю", keywords: ["документы за проживание Ставропольский край"] },
