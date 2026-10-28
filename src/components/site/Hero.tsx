@@ -74,11 +74,7 @@ const Hero = ({ onBook, city }: HeroProps) => {
             </SheetContent>
           </Sheet>
         </header>
-        {city.h1 ? (
-          <h1 className="hero-h1" dangerouslySetInnerHTML={{ __html: city.h1 }} />
-        ) : (
-          <h1 className="hero-h1">Выгодная командировка в&nbsp;{city.to}</h1>
-        )}
+        <h1 className="hero-h1">Гостиничные чеки в&nbsp;{city.in}</h1>
       </section>
 
       <section className="hero-cta" aria-label="Бронирование">
