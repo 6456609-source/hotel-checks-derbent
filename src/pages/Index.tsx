@@ -11,7 +11,10 @@ import CityLinks from "@/components/site/CityLinks";
 import SeoText from "@/components/site/SeoText";
 import BookingDialog from "@/components/site/BookingDialog";
 import FloatingContacts from "@/components/site/FloatingContacts";
-import { DEFAULT_CITY, findCity } from "@/components/site/cities";
+import { DEFAULT_CITY, cityPath, findCity, DAGESTAN } from "@/components/site/cities";
+import { HOTEL_NAME, PHONE_HREF } from "@/components/site/data";
+
+const SITE = "https://kassovie-cheki-original.ru";
 import { getSeo } from "@/components/site/seo";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -34,6 +37,33 @@ const Index = () => {
     setMeta("property", "og:title", title);
     setMeta("property", "og:description", description);
     setMeta("property", "og:image", image);
+    const url = `${SITE}${cityPath(city)}`;
+    setMeta("property", "og:url", url);
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
+    const id = "org-schema";
+    document.getElementById(id)?.remove();
+    const script = document.createElement("script");
+    script.id = id;
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: `${HOTEL_NAME} — гостиничные чеки ${city.name}`,
+      description,
+      url,
+      image,
+      telephone: PHONE_HREF.replace("tel:", ""),
+      priceRange: "₽₽",
+      areaServed: city.name,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: city.name,
+        addressRegion: city.region ?? DAGESTAN,
+        addressCountry: "RU",
+        ...(city.address ? { streetAddress: city.address } : {}),
+      },
+    });
+    document.head.appendChild(script);
   }, [city]);
 
   if (!city) return <Navigate to="/" replace />;
