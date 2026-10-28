@@ -12,6 +12,9 @@ export interface City {
   airport: string;
   ll: string;
   titleExtra?: string;
+  h1?: string;
+  aboutTitle?: string;
+  seoLead?: string;
   region?: string;
   regionIn?: string;
   airportFrom?: string;
@@ -60,7 +63,7 @@ export const CITIES: City[] = [
   },
   { slug: "buynaksk", name: "Буйнакск", in: "Буйнакске", to: "Буйнакск", photo: `${CDN}642f8adb-265d-4d29-a2d9-bab10f7b7d1b.jpg`, photoAlt: "Вид на Буйнакск и горы", airport: "≈ 1 час", ll: "47.117%2C42.819" },
   { slug: "dagestanskie-ogni", name: "Дагестанские Огни", in: "Дагестанских Огнях", to: "Дагестанские Огни", photo: `${CDN}9ec5c184-0758-4096-8977-1eb6c1475eda.jpg`, photoAlt: "Дагестанские Огни у Каспийского моря", airport: "≈ 2 часа", ll: "48.194%2C42.115" },
-  { slug: "derbent", name: "Дербент", in: "Дербенте", to: "Дербент", photo: HERO_PHOTO, photoAlt: "Стены крепости Нарын-Кала в Дербенте", airport: "≈ 2 часа", ll: "48.289%2C42.057" },
+  { slug: "derbent", name: "Дербент", in: "Дербенте", to: "Дербент", photo: HERO_PHOTO, photoAlt: "Стены крепости Нарын-Кала в Дербенте", airport: "≈ 2 часа", ll: "48.289%2C42.057", h1: "Гостиничные чеки в&nbsp;Дербенте", aboutTitle: "Отчётные документы за&nbsp;проживание в&nbsp;Дербенте", seoLead: "Нужны гостиничные чеки в Дербенте для отчёта о командировке? Оформляем отчётные документы за проживание в Дербенте: кассовый чек, счёт на оплату, акт об оказании услуг и договор. Полный комплект для бухгалтерии — быстро и официально." },
   { slug: "izberbash", name: "Избербаш", in: "Избербаше", to: "Избербаш", photo: `${CDN}98c0932a-50e1-4d8a-84da-9382786d6170.jpg`, photoAlt: "Набережная Избербаша", airport: "≈ 1 час", ll: "47.871%2C42.566" },
   { slug: "kaspiysk", name: "Каспийск", in: "Каспийске", to: "Каспийск", photo: `${CDN}db970b0b-0bce-4068-88d2-bf3471759eeb.jpg`, photoAlt: "Набережная Каспийска", airport: "≈ 15 минут", ll: "47.638%2C42.881" },
   { slug: "kizilyurt", name: "Кизилюрт", in: "Кизилюрте", to: "Кизилюрт", photo: `${CDN}d141fe2b-8a4f-48d2-9777-176953b9a889.jpg`, photoAlt: "Река Сулак у Кизилюрта", airport: "≈ 1 час", ll: "47.119%2C43.203" },
