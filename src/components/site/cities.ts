@@ -25,6 +25,17 @@ export interface City {
 
 export const DAGESTAN = "Республика Дагестан";
 export const KRAI = "Краснодарский край";
+export const STAV = "Ставропольский край";
+export const ROSTOV = "Ростовская область";
+export const CRIMEA = "Республика Крым";
+
+export const REGION_GEN: Record<string, string> = {
+  [DAGESTAN]: "Дагестана",
+  [KRAI]: "Краснодарского края",
+  [STAV]: "Ставропольского края",
+  [ROSTOV]: "Ростовской области",
+  [CRIMEA]: "Крыма",
+};
 
 export const CITIES: City[] = [
   {
@@ -37,7 +48,7 @@ export const CITIES: City[] = [
     airport: "≈ 40 минут",
     ll: "34.600%2C45.055",
     titleExtra: "Чеки Белогорск",
-    region: "Республика Крым",
+    region: CRIMEA,
     regionIn: "Крыму",
     airportFrom: "Из аэропорта Симферополя",
     airportOf: "Симферополя",
@@ -59,6 +70,7 @@ export const CITIES: City[] = [
     ],
   },
   { slug: "buynaksk", name: "Буйнакск", in: "Буйнакске", to: "Буйнакск", photo: `${CDN}642f8adb-265d-4d29-a2d9-bab10f7b7d1b.jpg`, photoAlt: "Вид на Буйнакск и горы", airport: "≈ 1 час", ll: "47.117%2C42.819" },
+  { slug: "gelendzhik", name: "Геленджик", in: "Геленджике", to: "Геленджик", photo: `${CDN}1e75a267-9c36-4917-ac50-820fdc7f05e2.jpg`, photoAlt: "Набережная Геленджика", airport: "≈ 15 минут", ll: "38.077%2C44.562", airportFrom: "Из аэропорта Геленджика", airportOf: "Геленджика", address: "Краснодарский край, г. Геленджик", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   { slug: "dagestanskie-ogni", name: "Дагестанские Огни", in: "Дагестанских Огнях", to: "Дагестанские Огни", photo: `${CDN}9ec5c184-0758-4096-8977-1eb6c1475eda.jpg`, photoAlt: "Дагестанские Огни у Каспийского моря", airport: "≈ 2 часа", ll: "48.194%2C42.115" },
   { slug: "derbent", name: "Дербент", in: "Дербенте", to: "Дербент", photo: HERO_PHOTO, photoAlt: "Стены крепости Нарын-Кала в Дербенте", airport: "≈ 2 часа", ll: "48.289%2C42.057" },
   { slug: "izberbash", name: "Избербаш", in: "Избербаше", to: "Избербаш", photo: `${CDN}98c0932a-50e1-4d8a-84da-9382786d6170.jpg`, photoAlt: "Набережная Избербаша", airport: "≈ 1 час", ll: "47.871%2C42.566" },
@@ -68,7 +80,11 @@ export const CITIES: City[] = [
   { slug: "krasnodar", name: "Краснодар", in: "Краснодаре", to: "Краснодар", photo: `${CDN}e9502a92-85a4-45ba-8a48-e3ab88f880d0.jpg`, photoAlt: "Улица Красная в Краснодаре", airport: "≈ 30 минут", ll: "38.975%2C45.035", airportFrom: "Из аэропорта Краснодара", airportOf: "Краснодара", address: "Краснодарский край, г. Краснодар", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
   { slug: "makhachkala", name: "Махачкала", in: "Махачкале", to: "Махачкалу", photo: `${CDN}2ec76909-8b7e-4e06-b636-03b57bce206a.jpg`, photoAlt: "Центр Махачкалы", airport: "≈ 20 минут", ll: "47.505%2C42.983" },
   { slug: "novorossiysk", name: "Новороссийск", in: "Новороссийске", to: "Новороссийск", photo: `${CDN}961dbca9-135f-492e-966b-c6d981afee86.jpg`, photoAlt: "Набережная Новороссийска", airport: "≈ 1 час", ll: "37.768%2C44.723", airportFrom: "Из аэропорта Анапы", airportOf: "Анапы", address: "Краснодарский край, г. Новороссийск", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
+  { slug: "novocherkassk", name: "Новочеркасск", in: "Новочеркасске", to: "Новочеркасск", photo: `${CDN}ba06c8ee-cefc-48b0-a28c-594aa4f6409a.jpg`, photoAlt: "Вознесенский собор в Новочеркасске", airport: "≈ 50 минут", ll: "40.093%2C47.411", airportFrom: "Из аэропорта Ростова-на-Дону", airportOf: "Ростова-на-Дону", address: "Ростовская область, г. Новочеркасск", region: ROSTOV, regionIn: "Ростовской области", keywords: ["документы за проживание Ростовская область"] },
+  { slug: "pyatigorsk", name: "Пятигорск", in: "Пятигорске", to: "Пятигорск", photo: `${CDN}c89b5ca7-0602-4956-818b-7643d0237a79.jpg`, photoAlt: "Пятигорск и гора Машук", airport: "≈ 30 минут", ll: "43.059%2C44.049", airportFrom: "Из аэропорта Минеральных Вод", airportOf: "Минеральных Вод", address: "Ставропольский край, г. Пятигорск", region: STAV, regionIn: "Ставропольскому краю", keywords: ["документы за проживание Ставропольский край"] },
   { slug: "sochi", name: "Сочи", in: "Сочи", to: "Сочи", photo: `${CDN}d8da35b7-9f44-4c93-9330-354407a035e5.jpg`, photoAlt: "Морской вокзал Сочи", airport: "≈ 40 минут", ll: "39.723%2C43.585", airportFrom: "Из аэропорта Сочи", airportOf: "Сочи", address: "Краснодарский край, г. Сочи", region: KRAI, regionIn: "Краснодарскому краю", keywords: ["документы за проживание Краснодарский край"] },
+  { slug: "stavropol", name: "Ставрополь", in: "Ставрополе", to: "Ставрополь", photo: `${CDN}43c530e1-7593-4c46-86e0-98d5a6f6269f.jpg`, photoAlt: "Центр Ставрополя", airport: "≈ 20 минут", ll: "41.969%2C45.044", airportFrom: "Из аэропорта Ставрополя", airportOf: "Ставрополя", address: "Ставропольский край, г. Ставрополь", region: STAV, regionIn: "Ставропольскому краю", keywords: ["документы за проживание Ставропольский край"] },
+  { slug: "taganrog", name: "Таганрог", in: "Таганроге", to: "Таганрог", photo: `${CDN}1023257b-6dd1-43e7-90fb-a5ca8a9917aa.jpg`, photoAlt: "Пушкинская набережная Таганрога", airport: "≈ 1,5 часа", ll: "38.897%2C47.209", airportFrom: "Из аэропорта Ростова-на-Дону", airportOf: "Ростова-на-Дону", address: "Ростовская область, г. Таганрог", region: ROSTOV, regionIn: "Ростовской области", keywords: ["документы за проживание Ростовская область"] },
   { slug: "khasavyurt", name: "Хасавюрт", in: "Хасавюрте", to: "Хасавюрт", photo: `${CDN}09f79e30-a2a7-4781-90b7-188056e2b836.jpg`, photoAlt: "Центр Хасавюрта", airport: "≈ 1,5 часа", ll: "46.588%2C43.250" },
   { slug: "yuzhno-sukhokumsk", name: "Южно-Сухокумск", in: "Южно-Сухокумске", to: "Южно-Сухокумск", photo: `${CDN}00c04c66-6620-40d2-aac3-10df2bc9d688.jpg`, photoAlt: "Южно-Сухокумск", airport: "≈ 4,5 часа", ll: "45.648%2C44.660" },
 ];

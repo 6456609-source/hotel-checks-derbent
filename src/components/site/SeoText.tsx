@@ -1,13 +1,13 @@
-import { CITIES, KRAI, type City } from "./cities";
+import { CITIES, CRIMEA, DAGESTAN, KRAI, REGION_GEN, ROSTOV, STAV, type City } from "./cities";
 
 const SeoText = ({ city }: { city: City }) => {
   const rest = CITIES.filter((c) => c.slug !== city.slug);
-  const others = rest.filter((c) => !c.region).map((c) => c.in).join(", ");
-  const krai = rest.filter((c) => c.region === KRAI).map((c) => c.in).join(", ");
-  const crimea = rest.some((c) => c.slug === "belogorsk") ? "Белогорске (Крым)" : "";
-  const lastP = city.region === KRAI
-    ? `Кроме проживания, оформим отчётные документы за трансфер, аренду автомобиля и переговорную. Работаем в ${city.in}, а также в ${krai}, ${crimea} и городах Дагестана: ${others}.`
-    : `Кроме проживания, оформим отчётные документы за трансфер, аренду автомобиля и переговорную. Работаем в ${city.in} и других городах Дагестана: ${others}, а также в ${crimea}, ${krai}.`;
+  const groups = [DAGESTAN, KRAI, STAV, ROSTOV, CRIMEA]
+    .map((r) => ({ r, list: rest.filter((c) => (c.region ?? DAGESTAN) === r).map((c) => c.in) }))
+    .filter((g) => g.list.length)
+    .map((g) => `${REGION_GEN[g.r]}: ${g.list.join(", ")}`);
+  const geo = `Работаем в ${city.in}, а также в городах ${groups.join("; ")}.`;
+  const lastP = `Кроме проживания, оформим отчётные документы за трансфер, аренду автомобиля и переговорную. ${geo}`;
   const lead = `Нужны гостиничные чеки в ${city.in} для отчёта о командировке? Оформляем отчётные документы за проживание в ${city.in}: кассовый чек, счёт на оплату, акт об оказании услуг и договор. Полный комплект для бухгалтерии — быстро и официально.`;
   const paragraphs = city.seoText ? [lead, ...city.seoText] : [
     lead,
@@ -16,7 +16,7 @@ const SeoText = ({ city }: { city: City }) => {
     "Оплатить проживание можно наличными или по безналичному расчёту на реквизиты компании. Счёт пришлём заранее, а закрывающие документы — сразу после выезда.",
     lastP,
   ];
-  const finalNote = city.region && city.region !== KRAI ? ` Также работаем в городах Дагестана: ${others}, и Краснодарского края: ${krai}.` : "";
+  const finalNote = city.seoText ? ` ${geo}` : "";
   const half = Math.ceil(paragraphs.length / 2);
   return (
     <section id="about" className="px-4 md:px-6 py-20 md:py-24 bg-card scroll-mt-4">
