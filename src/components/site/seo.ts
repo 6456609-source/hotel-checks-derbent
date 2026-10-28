@@ -18,6 +18,7 @@ export const getSeo = (city: City) => {
     `закрывающие документы гостиница ${n}`,
     `гостиница с отчётными документами ${n}`,
     `чеки ${n}`,
+    `гостиничные чеки ${n} купить`,
     ...(city.slug === "derbent" ? ["гостиничные чеки Махачкала"] : city.keywords ?? ["документы за проживание Дагестан"]),
   ].join(", ");
   return { title, description, keywords, image: city.photo };
